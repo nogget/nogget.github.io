@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bubble Tea (Boba)</title>
+  </head>
+  <body>
+    <!-- STEP 1: main title in an <h1>, right below <body> -->
+    <h1>Bubble Tea (Boba)</h1>
+
+    <!-- STEP 2: paragraph about a topic I find interesting
+         STEP 3: important words made bold with <strong>
+         STEP 4: a link (<a href="...">) inside the paragraph -->
+    <p>
+      I love <strong>bubble tea</strong>, also called <strong>boba</strong>! It is my
+      favorite treat after class. My go-to order is <strong>brown sugar milk tea</strong>
+      with extra chewy <strong>tapioca pearls</strong>. Did you know boba started in
+      <strong>Taiwan</strong>? You can read more about its history on
+      <a href="https://en.wikipedia.org/wiki/Bubble_tea" title="Bubble tea on Wikipedia">Wikipedia's bubble tea page</a>.
+    </p>
+
+    <!-- STEP 5: an image below the paragraph (<img> is an empty element, so no closing tag) -->
+    <img id="drinkImage" src="images/brown-sugar.svg" alt="A cup of brown sugar milk tea with tapioca pearls" />
+
+    <h3 id="flavorName">Brown Sugar</h3>
+    <p id="flavorInfo">Rich caramel syrup swirled into fresh milk. The classic!</p>
+
+    <!-- EXTRA: each button changes the picture to a different image -->
+    <h2>Pick a flavor</h2>
+    <button style="background-color: #c98a55" onclick="pickFlavor('brown-sugar', 'Brown Sugar', 'Rich caramel syrup swirled into fresh milk. The classic!')">Brown Sugar</button>
+    <button style="background-color: #b89ae0" onclick="pickFlavor('taro', 'Taro', 'Sweet, nutty purple root blended into creamy milk tea.')">Taro</button>
+    <button style="background-color: #9fcb7a" onclick="pickFlavor('matcha', 'Matcha', 'Earthy Japanese green tea whisked with milk.')">Matcha</button>
+    <button style="background-color: #ffc24d" onclick="pickFlavor('mango', 'Mango', 'Bright, tropical mango fruit tea. Tastes like summer.')">Mango</button>
+    <button style="background-color: #f7a1b8" onclick="pickFlavor('strawberry', 'Strawberry', 'Pink strawberry milk with real fruit. Sweet and fresh.')">Strawberry</button>
+    <button style="background-color: #f4a261" onclick="pickFlavor('thai-tea', 'Thai Tea', 'Strong black tea spiced with star anise, topped with cream.')">Thai Tea</button>
+
+    <!-- EXTRA: small script that makes the flavor buttons work -->
+    <script>
+      function pickFlavor(file, name, info) {
+        var img = document.getElementById("drinkImage");
+        img.src = "images/" + file + ".svg";
+        img.alt = "A cup of " + name + " bubble tea with tapioca pearls";
+
+        document.getElementById("flavorName").textContent = name;
+        document.getElementById("flavorInfo").textContent = info;
+      }
+    </script>
+  </body>
+</html>
